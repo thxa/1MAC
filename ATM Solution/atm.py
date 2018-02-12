@@ -1,8 +1,9 @@
-def atm(money , request):
+def atm(balance , request):
 # allowed papers: 100, 50, 10, 5, and rest of request
     while request > 0:
         g = "give "
-        if money < request:
+
+        if balance < request:
             print "none"
             break
 
@@ -23,7 +24,6 @@ def atm(money , request):
             print g + str(5)
 
         elif request >= 2:
-            money -= 2
             request-= 2
             print g + str(2)
 
