@@ -5,9 +5,9 @@ class Member:
         self.age = age
 
 
-    def info(self):
+    def __str__(self):
         distance(35)
-        print("Name:%s \nAge:%d " %(self.name , self.age))
+        return "Name:%s \nAge:%d " %(self.name , self.age)
 
 
 class Post:
@@ -17,9 +17,9 @@ class Post:
         self.body = body
 
 
-    def info(self):
+    def __str__(self):
         distance(34)
-        print("title: %s\nbody: %s" %(self.title, self.body))
+        return "title: %s\nbody: %s" %(self.title, self.body)
 
 
 def distance(x):

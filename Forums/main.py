@@ -10,6 +10,6 @@ user_list = [user1,user2]
 post_list =[post1,post2,post3]
 
 for user in user_list:
-    print(user.info())
+    print(user)
     for post in post_list:
-        print(post.info())
+        print(post)
