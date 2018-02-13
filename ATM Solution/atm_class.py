@@ -4,18 +4,16 @@ class ATM:
         self.bank_name = bank_name
 
     def withdraw(self, request):
-        result = self.balance
 
         print "welcome to " + self.bank_name
         print "Current balance = %d" %self.balance
         print "=" * 34
 
         if request > self.balance:
-            print "Current balance = %d" % result
             print("Can't give you all this money !!")
 
         else:
-            result = self.balance - request
+            self.balance  -= request
             while request > 0:
                 give_string = "give "
 
@@ -43,7 +41,6 @@ class ATM:
                     request -= 1
                     print give_string + str(1)
         print "=" * 34
-        self.balance = result
         return  self.balance
 
 
