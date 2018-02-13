@@ -8,13 +8,13 @@ class ATM:
 
 
     def withdraw(self, request):
-        r = self.balance
+        result = self.balance
         if request > self.balance:
-            print "Current balance = %d" % r
+            print "Current balance = %d" % result
             print("Can't give you all this money !!")
 
         else:
-            r = self.balance - request
+            result = self.balance - request
             while request > 0:
                 give_string = "give "
 
@@ -42,7 +42,7 @@ class ATM:
                     request -= 1
                     print give_string + str(1)
         print "=" * 34
-        self.balance = r
+        self.balance = result
         return  self.balance
 
 
