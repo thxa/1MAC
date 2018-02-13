@@ -2,13 +2,13 @@ class ATM:
     def __init__(self ,balance , bank_name ):
         self.balance = balance
         self.bank_name = bank_name
-        print "welcome to " + self.bank_name
-        print "Current balance = %d" %self.balance
-        print "=" * 34
-
 
     def withdraw(self, request):
         result = self.balance
+
+        print "welcome to " + self.bank_name
+        print "Current balance = %d" %self.balance
+        print "=" * 34
 
         if request > self.balance:
             print "Current balance = %d" % result
