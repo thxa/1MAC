@@ -2,6 +2,8 @@ class ATM:
     def __init__(self ,balance , bank_name ):
         self.balance = balance
         self.bank_name = bank_name
+        self.withdrawals_list = []
+
 
     def withdraw(self, request):
 
@@ -18,30 +20,43 @@ class ATM:
                 give_string = "give "
 
                 if request >= 100:
+                    self.withdrawals_list.append(request)
                     request -= 100
                     print give_string + str(100)
 
                 elif request >= 50:
+                    self.withdrawals_list.append(request)
                     request -= 50
                     print give_string + str(50)
 
                 elif request >= 10:
+                    self.withdrawals_list.append(request)
                     request -= 10
                     print give_string + str(10)
 
                 elif request >= 5:
+                    self.withdrawals_list.append(request)
                     request -= 5
                     print give_string + str(5)
 
                 elif request >= 2:
+                    self.withdrawals_list.append(request)
                     request -= 2
                     print give_string + str(2)
 
                 elif request >= 1:
+                    self.withdrawals_list.append(request)
                     request -= 1
                     print give_string + str(1)
         print "=" * 34
         return  self.balance
+
+
+    def show_withdrawals(self):
+        print "List"
+        for withdrawal in self.withdrawals_list:
+            print(withdrawal)
+        print "=" * 34
 
 
 if __name__ == '__main__':
@@ -56,3 +71,6 @@ if __name__ == '__main__':
 
     atm2.withdraw(100)
     atm2.withdraw(2000)
+
+    atm1.show_withdrawals()
+    atm2.show_withdrawals()
