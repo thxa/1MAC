@@ -1,13 +1,11 @@
 def withdraw(balance, request):
-    r = balance
+
     if request > balance:
         print("Can't give you all this money !!")
 
-    elif request < 0:
-        print "none"
-
     else:
         r = balance - request
+
         while request > 0:
             g = "give "
 
@@ -34,10 +32,12 @@ def withdraw(balance, request):
             elif request >= 1:
                 request -= 1
                 print g + str(1)
-
+    return  r
     print "Current balance = %d"%r
+
+
 balance = 500
 withdraw(balance, 277)
 withdraw(balance, 30)
 withdraw(balance, 5)
-withdraw(balance, 500)
+withdraw(balance, 2000)
