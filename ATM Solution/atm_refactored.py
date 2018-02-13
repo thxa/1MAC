@@ -4,36 +4,36 @@ def withdraw(balance, request):
         print("Can't give you all this money !!")
 
     else:
-        r = balance - request
+        result = balance - request
 
         while request > 0:
-            g = "give "
+            give_string = "give "
 
             if request >= 100:
                 request -= 100
-                print g + str(100)
+                print give_string + str(100)
 
             elif request >= 50:
                 request -= 50
-                print g + str(50)
+                print give_string + str(50)
 
             elif request >= 10:
                 request -= 10
-                print g + str(10)
+                print give_string + str(10)
 
             elif request >= 5:
                 request -= 5
-                print g + str(5)
+                print give_string + str(5)
 
             elif request >= 2:
                 request -= 2
-                print g + str(2)
+                print give_string + str(2)
 
             elif request >= 1:
                 request -= 1
-                print g + str(1)
-    return  r
-    print "Current balance = %d"%r
+                print give_string + str(1)
+    return  result
+    print "Current balance = %d"%result
 
 
 balance = 500

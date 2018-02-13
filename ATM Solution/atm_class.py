@@ -9,6 +9,7 @@ class ATM:
 
     def withdraw(self, request):
         result = self.balance
+
         if request > self.balance:
             print "Current balance = %d" % result
             print("Can't give you all this money !!")
