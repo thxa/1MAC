@@ -2,25 +2,23 @@ class MemberStore():
     members = []
 
     def get_all(self):
-        if len(MemberStore.members) > 0:
-            for get in MemberStore.members:
-                print(get)
+        if len(self.members) > 0:
+            return self.members
         else:
-            print(None)
+            return None
 
     def add(self, member):
-        MemberStore.members.append(member)
+        self.members.append(member)
 
 
 class PostStore(MemberStore):
     posts = []
 
     def get_all(self):
-        if len(PostStore.posts) > 0:
-            for get in PostStore.posts:
-                print(get)
+        if len(self.posts) > 0:
+            return self.posts
         else:
-            print(None)
+            return None
 
     def add(self, post):
-        PostStore.posts.append(post)
+        self.posts.append(post)

@@ -16,5 +16,8 @@ post_list.add(post1)
 post_list.add(post2)
 post_list.add(post3)
 
-user_list.get_all()
-post_list.get_all()
+for get in user_list.get_all():
+    print(get)
+
+for get in post_list.get_all():
+    print(get)
