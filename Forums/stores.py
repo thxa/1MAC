@@ -6,7 +6,7 @@ class MemberStore():
             for get in MemberStore.members:
                 print(get)
         else:
-            return None
+            print(None)
 
     def add(self, member):
         MemberStore.members.append(member)
@@ -20,7 +20,7 @@ class PostStore(MemberStore):
             for get in PostStore.posts:
                 print(get)
         else:
-            return None
+            print(None)
 
     def add(self, post):
         PostStore.posts.append(post)
