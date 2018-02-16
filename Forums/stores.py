@@ -2,11 +2,10 @@ class MemberStore:
     def __init__(self):
         pass
     members = []
+    last_id = 1
 
     def get_all(self):
         return self.members
-
-    last_id = 1
 
     def add(self, member):
         member.id = self.last_id
