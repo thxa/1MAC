@@ -19,10 +19,8 @@ class MemberStore:
                 return result
 
     def entity_exists(self, member):
-        result = True
         # check if member exists or not
-        if member in self.get_all():
-            return result
+        return member in self.get_all()
 
     def delete(self, id):
         scan = self.get_by_id(id)
