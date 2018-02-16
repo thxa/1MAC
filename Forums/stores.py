@@ -9,15 +9,13 @@ class MemberStore:
 
     def add(self, member):
         member.id = self.last_id
-
         self.members.append(member)
-
         self.last_id += 1
 
-    def get_by_id(self, id):
+    def get_by_id(self, _id):
         all_members = self.get_all()
         for result in all_members:
-            if result.id == id:
+            if result.id == _id:
                 return result
 
     def entity_exists(self, member):
