@@ -1,5 +1,7 @@
 import models
 import stores
+
+
 user1 = models.Member("user1", 1)
 user2 = models.Member("user2", 2)
 post1 = models.Post("title1", "body1")
@@ -16,8 +18,8 @@ post_list.add(post1)
 post_list.add(post2)
 post_list.add(post3)
 
-for get in user_list.get_all():
-    print(get)
-
-for get in post_list.get_all():
-    print(get)
+print(user_list.get_by_id(1))
+print(user_list.entity_exists(user1))
+user_list.delete(1)
+print(user_list.entity_exists(user1))
+print(user_list.get_by_id(2))
