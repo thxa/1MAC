@@ -22,8 +22,8 @@ class MemberStore:
         # check if member exists or not
         return member in self.get_all()
 
-    def delete(self, id):
-        scan = self.get_by_id(id)
+    def delete(self, _id):
+        scan = self.get_by_id(_id)
         self.members.remove(scan)
 
 
