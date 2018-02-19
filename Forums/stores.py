@@ -41,12 +41,12 @@ class MemberStore:
         return all_name
 
     def update(self, member):
+        all_member = self.get_all()
         member_id = member.id
-        for member_re in self.get_all():
-            if member_id == member_re.id:
-                member_re.name = member.name
-                member_re.age = member.age
-        return member_re
+        for i, e in enumerate(all_member):
+            if e.id == member_id:
+                all_member[i] = member
+
 
 
 class PostStore:
