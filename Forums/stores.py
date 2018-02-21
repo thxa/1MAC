@@ -33,20 +33,29 @@ class MemberStore:
 
     def get_by_name(self, member_name):
         all_members = self.get_all()
-        all_name = []
-        for member in all_members:
-            # algorithm for searching by name
-            if member_name == member.name:
-                all_name.append(member_name)
-        return all_name
+        # algorithm for searching by name
+        return (member for member in all_members if member.name == member_name)
 
     def update(self, member):
         all_member = self.get_all()
         member_id = member.id
-        for i, e in enumerate(all_member):
+        for index, e in enumerate(all_member):
             if e.id == member_id:
-                all_member[i] = member
+                all_member[index] = member
 
+    def get_members_with_posts(self, all_posts):
+        all_member = self.get_all()
+        for member in all_member:
+            for post in all_posts:
+                if member.id == post.member_id:
+                    member.posts.append(post)
+        return all_member
+
+    def get_top_two(self, all_posts):
+        all_posts_s = self.get_members_with_posts(all_posts)
+        all_members = self.get_all()
+        all_post = sorted(all_members, key=lambda top: len(top.posts), reverse=True)
+        return all_post[:2]
 
 
 class PostStore:
