@@ -49,7 +49,7 @@ class MemberStore:
     def get_members_with_posts(self, all_posts):
         all_members = self.get_all()
         for member, post in itertools.product(all_members, all_posts):
-            if post.member_id is member.id:
+            if post.member_id == member.id:
                 member.posts.append(post)
         return all_members
 
