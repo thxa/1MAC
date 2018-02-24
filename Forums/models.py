@@ -7,7 +7,6 @@ class Member:
         self.name = name
         self.age = age
         self.posts = []
-        self.data = datetime.datetime.now()
 
     def __str__(self):
         return "Name:%s\nAge:%d" % (self.name, self.age)
@@ -19,6 +18,7 @@ class Post:
         self.title = title
         self.content = content
         self.member_id = member_id
+        self.data = datetime.datetime.now()
 
     def __str__(self):
         return "Title: %s , content: %s" % (self.title, self.content)

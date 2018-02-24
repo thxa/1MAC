@@ -4,15 +4,15 @@ import itertools
 class BaseStore:
     def __init__(self, data_provider, last_id):
         self._data_provider = data_provider
-        self.last_id = last_id
+        self._last_id = last_id
 
     def get_all(self):
         return self._data_provider
 
     def add(self, item_instance):
-        item_instance.id = self.last_id
+        item_instance.id = self._last_id
         self._data_provider.append(item_instance)
-        self.last_id += 1
+        self._last_id += 1
 
     def get_by_id(self, _id):
         all_item = self.get_all()
@@ -93,7 +93,7 @@ class MemberStore(BaseStore):
 
     def get_top_two(self, all_posts):
         member_with_posts = list(self.get_members_with_posts(all_posts))
-        member_with_posts.sort(key=lambda member: len(member.posts), reverse=True)
+        member_with_posts.sort(key=lambda top: len(top.posts), reverse=True)
         yield member_with_posts[1]
         yield member_with_posts[2]
 
@@ -135,3 +135,8 @@ class PostStore(BaseStore):
 
     def entity_exists(self, post):
         return post in self.get_all()
+
+    def get_posts_by_date(self):
+        all_posts = self.get_all()
+        all_posts.sort(key=lambda post: post.data, reverse=True)
+        return (post for post in all_posts)
