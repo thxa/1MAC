@@ -9,7 +9,7 @@ def home():
 
 
 @app.route("/SayHello/<name>")
-def hello_name(name):
+def say_hello(name):
     return "Hello %s" % name
 
 
