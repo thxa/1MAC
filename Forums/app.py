@@ -17,5 +17,5 @@ def home():
 def say_hello(name):
     return "Hello %s" % name
 
-
-app.run()
+if __name__ == '__main__':
+    app.run()
