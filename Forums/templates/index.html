@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+  <head>
         <meta charset="UTF-8">
         <title>One Million Arab Coders</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <style media="screen">
-          header{
-            color: black;
-          }
-          body{
-          background-color: grey;
-          }
-        </style>
-    </head>
+        <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
 
-    <body>
-        <header>
-              <h1>One Million Arab Coders</h1>
-        </header>
+         <div id="header">
+           <div class="container">
+             <div class="float-left"></div>
+             <div class="float-right">
+                 <img src="static/img/OMAC.png" alt="">
+             </div>
+           </div>
 
-        <div>
-            <h3>Welcome to One Million Arab Coders </h3>
-        </div>
+           <div id="main">
+             <div>
+               {% for post in posts %}
+               <tr>
+                    <td>
+                        {{post.title}}
+                      </td>
 
-    </body>
+                      <td>
+                        <a href="#">edit</a>
+                      </td>
+
+                      <td>
+                        <a href="#">delete</a>
+                      </td>
+
+               </tr>
+                    {% endfor %}
+                  </div>
+              </div>
+   </body>
 
 </html>
