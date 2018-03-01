@@ -1,11 +1,8 @@
 from flask import Flask, render_template
-from Forums import models
-from Forums import stores
+import dummy_data
 app = Flask("__name__")
 
-post_story = stores.PostStore()
-post_story.add(models.Post("Life", "Life is alawys  great"))
-post_story.add(models.Post("Sunshine", "Sunshine is amazing"))
+post_story = dummy_data.post_story
 
 
 @app.route("/")
