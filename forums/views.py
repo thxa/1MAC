@@ -1,7 +1,7 @@
-from flask import render_template, request, redirect, url_for
-from app import app, member_store, post_store
+from flask import Flask, render_template, request, redirect, url_for
+from app import member_store, post_store
 from forums import models
-app = app
+app = Flask("__name__")
 
 
 @app.route("/")
