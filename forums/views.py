@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
-from app import member_store, post_store
+from flask import render_template, request, redirect, url_for
+from forums.app import app, member_store, post_store
 from forums import models
-app = Flask("__name__")
 
 
 @app.route("/")
@@ -16,6 +15,5 @@ def topic_add():
         new_pots = models.Post(request.form["title"], request.form["content"])
         post_store.add(new_pots)
         return redirect(url_for("home"))
-
     else:
         return render_template("topic_add.html")
